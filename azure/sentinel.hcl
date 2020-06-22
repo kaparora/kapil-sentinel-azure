@@ -10,6 +10,11 @@ module "tfconfig-functions" {
     source = "../common-functions/tfconfig-functions/tfconfig-functions.sentinel"
 }
 
+policy "restrict-publishers-of-current-vms" {
+    source = "./restrict-publishers-of-current-vms.sentinel"
+    enforcement_level = "advisory"
+}
+
 policy "restrict-vm-size" {
     source = "./restrict-vm-size.sentinel"
     enforcement_level = "soft-mandatory"
