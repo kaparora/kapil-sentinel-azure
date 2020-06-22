@@ -15,16 +15,6 @@ policy "enforce-mandatory-tags" {
     enforcement_level = "advisory"
 }
 
-policy "restrict-app-service-to-https" {
-    source = "./restrict-app-service-to-https.sentinel"
-    enforcement_level = "advisory"
-}
-
-policy "restrict-publishers-of-current-vms" {
-    source = "./restrict-publishers-of-current-vms.sentinel"
-    enforcement_level = "advisory"
-}
-
 policy "restrict-vm-size" {
     source = "./restrict-vm-size.sentinel"
     enforcement_level = "advisory"
