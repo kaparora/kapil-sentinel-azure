@@ -10,11 +10,6 @@ module "tfconfig-functions" {
     source = "../common-functions/tfconfig-functions/tfconfig-functions.sentinel"
 }
 
-policy "enforce-mandatory-tags" {
-    source = "./enforce-mandatory-tags.sentinel"
-    enforcement_level = "hard-mandatory"
-}
-
 policy "restrict-vm-size" {
     source = "./restrict-vm-size.sentinel"
     enforcement_level = "soft-mandatory"
