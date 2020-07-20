@@ -15,7 +15,7 @@ module "tfrun-functions" {
 }
 
 
-policy "limit-proposed-monthly-cost" {
+policy "Monthy costs must be under 1000 USD" {
     source = "./limit-proposed-monthly-cost.sentinel"
     enforcement_level = "hard-mandatory"
 }
