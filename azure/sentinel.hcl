@@ -15,7 +15,7 @@ policy "Only RedHat and Ubuntu are allowed as image publishers" {
     enforcement_level = "advisory"
 }
 
-policy "Only Standard A1  A2  D1_v2 and D2_v2 are allowed VM sizes" {
+policy "Only Standard A1  A2  D1_v2  D2_v2 and D2s_v3are allowed VM sizes" {
     source = "./restrict-vm-size.sentinel"
     enforcement_level = "soft-mandatory"
 }
