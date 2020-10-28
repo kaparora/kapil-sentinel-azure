@@ -18,8 +18,8 @@ allAzureVMsNorthEurope = plan.filter_attribute_is_value(allAzureVMs,
 # Filter to Azure VMs with violations
 # Warnings will be printed for all violations since the last parameter is true
 
-violatingAzureVMsNorthEurope = plan.filter_attribute_not_in_list(allAzureVMsNorthEurope,
-                    "vm_size", allowed_sizes_north, true)                    
+violatingAzureVMsNorthEurope = plan.filter_attribute_not_in_list(allAzureVMsNorthEurope["resources"],
+                    "vm_size", allowed_sizes_north, true)
 
 # Main rule
 main = rule {
