@@ -12,7 +12,7 @@ allowed_sizes_north = ["Standard_D1_v2", "Standard_D2_v2", "Standard_D2s_v3"]
 # Get all Azure VMs
 allAzureVMs = plan.find_resources("azurerm_virtual_machine")
 
-allAzureVMsNorthEurope = plan.filter_attribute_is_not_value(allAzureVMs,
+allAzureVMsNorthEurope = plan.filter_attribute_is_value(allAzureVMs,
                             "location","northeurope", true)
 
 # Filter to Azure VMs with violations
