@@ -29,3 +29,8 @@ policy "Only Standard D1_v2  D2_v2 and D2s_v3  are allowed VM sizes in North Eur
     source = "./restrict-vm-size-northeurope.sentinel"
     enforcement_level = "hard-mandatory"
 }
+
+policy "Azure Machine Learning Workspaces are only allowed in West Europe" {
+    source = "./restrict-aml-region-to-westeurope.sentinel"
+    enforcement_level = "hard-mandatory"
+}

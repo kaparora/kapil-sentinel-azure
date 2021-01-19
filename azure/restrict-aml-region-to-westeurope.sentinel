@@ -1,0 +1,23 @@
+# This policy uses the Sentinel tfplan/v2 import to require that
+# all Azure VMs have vm sizes from an allowed list
+
+# Import common-functions/tfplan-functions/tfplan-functions.sentinel
+# with alias "plan"
+import "tfplan-functions" as plan
+
+# Allowed Azure VM Sizes
+# Include "null" to allow missing or computed values
+allowed_regions = ["westeurope", "West Europe"]
+
+# Get all Azure VMs
+allAMLWSs = plan.find_resources("azurerm_machine_learning_workspace")
+
+# Filter to Azure VMs with violations
+# Warnings will be printed for all violations since the last parameter is true
+violatingAMLWSs = plan.filter_attribute_not_in_list(allAMLWSs,
+                    "location", allowed_regions, true)
+
+# Main rule
+main = rule {
+  length(violatingAMLWSs["messages"]) is 0
+}
